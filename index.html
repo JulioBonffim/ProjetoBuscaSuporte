@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+ <head>
+	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="Menu Dropdown" content="Como fazer um menu dropdown em HTML e CSS?" />
+    <meta name="description" content="Veja neste tutorial como criar um Menu dropdown responsive com html e css e jquery para dar o efeito mobile."/>
+    <meta name="keywords" content="Menu Html, Menu Css, Menu Jquery, Menu Responsivo, Menu dropdown."/>
+    <meta name="author" content="Loop Nerd" />
+    <meta name="URL" content="https://www.asseponto.com.br/assepontoControle/suporte/Atendimento/default.aspx?filTipo=1"/>
+    <meta http-equiv="content-language" content="pt-br" />
+    <meta name="robots" content="index, follow"/>
+    
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+    <![endif]-->       
+
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fonts-icones.css">
+    <link rel="shortcut icon" href="https://www.asseponto.com.br/assepontoControle/suporte/Atendimento/default.aspx?filTipo=1" type="image/ico" />
+
+	<title>Como fazer um menu dropdown em HTML e CSS?</title>
+
+ </head>
+
+<body>
+    
+<header class="main_header container">        
+    
+    <div class="content">
+    
+        <div class="main_header_logo">
+            <a href="https://assecont.com.br" target="_blank"><img src="img/logoAssecont.png" alt="logo.png" title="Assecont"/></a>
+        </div>
+
+        <div class="menu">
+
+            <nav class="main-nav">
+            
+              <ul>
+                
+                <li><a href="#" title="Home">Inícío</a></li>
+                
+                <li><a href="">Relatórios</a>
+                 
+                    <ul>
+                        
+                        <li><a href="#" title="Relatórios">Apontamento</a></li>
+                        <li><a href="#" title="Relatórios">Banco de horas</a></li>
+                        <li><a href="#" title="Relatórios">Justificativas</a></li>
+                        <li><a href="#" title="Relatórios">Macações</a></li>
+
+                    </ul>
+
+                </li>
+                
+                <li><a href="">Relógios</a>
+                
+                    <ul>
+
+                        <li><a href="#" title="Procedimentos">ZKTeco</a></li>
+                        <li><a href="#" title="Procedimentos">Control ID</a>
+                        <li><a href="#" title="Procedimentos">Gertec</a>
+
+                          <ul>
+                            <li><a href="#">G2 D</a></li>
+                            <li><a href="#">G2 BPD</a></li>
+                            <li><a href="#">G3 B</a></li>
+                            <li><a href="#">G3 KR</a></li>
+                          </ul>
+
+                        <li><a href="#" title="Procedimentos">RHJ</a></li>
+                        
+                        </li>
+                        
+                      
+                    </ul>
+
+                </li>
+
+                <li><a href="#" title="Blog">Outros</a></li>
+                <li><a href="#" title="Dê suas sugestão">Sugestões de melhorias</a></li>
+              
+              </ul>
+            
+            </nav>
+
+            <div class="mob-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="overlay"></div>
+          
+        </div><!-- menu -->
+        
+    
+    </div><!--content-->
+
+</header>
+
+<main class="main_content container">
+
+        
+    <section class="section-seu-codigo container">
+        
+        <div class="content">
+            
+            <h1 class="section_title"><i class="icon icon-code"></i> Busca do Suporte </h1>
+            
+            <div class="box-artigo">
+                
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+            </div><!--Box Artigo-->
+
+
+        <div class="clear"></div>
+        </div>
+    </section><!--FECHA BOX HTML-->
+
+
+
+</main>
+
+<footer class="main_footer container">
+    <div class="main_footer_copy">
+
+        <p class="m-b-footer"> Grupo Assecont, todos os direitos reservados.</p> 
+        <p class="by"><i></i> Desenvolvido por: RESOLVEDORES <a href="" title="Templates Html" target="_blank"></a></p>
+    
+    </div>
+</footer>
+
+<script src="js/jquery.js"></script>
+<script src="js/script.js"></script>
+<script>
+    
+    //Menu
+    $(".main-nav ul li:has(ul)").addClass("submenu");
+    $(".main-nav ul li:has(ul)").append("<i></i>");
+    $(".main-nav ul i").click(function() {
+      $(this)
+        .parent("li")
+        .toggleClass("open");
+      $(this)
+        .parent("li")
+        .children("ul")
+        .slideToggle();
+    });
+
+    //Menu Mobile
+    $(".mob-btn").click(function() {
+      if (!$("html").hasClass("show-menu")) {
+        $("html").addClass("show-menu");
+      } else {
+        $("html").removeClass("show-menu");
+      }
+    });
+
+    $(".overlay").click(function() {
+      if ($("html").hasClass("show-menu")) {
+        $("html").removeClass("show-menu");
+      }
+    });
+
+    //Aparecer addClass
+    $(".first ul")
+    
+      .clone()
+      .prependTo(".main-nav")
+      .addClass("desk-hide");
+
+    $(".last ul")
+    
+      .clone()
+      .appendTo(".main-nav")
+      .addClass("desk-hide");
+
+</script>
+<body class="mat-typography">
+  <app-root></app-root>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+</html>
